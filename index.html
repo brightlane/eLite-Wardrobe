@@ -199,3 +199,131 @@ function toggleFAQ(header){const answer=header.nextElementSibling;answer.style.d
 
 </body>
 </html>
+<!-- Men’s Fashion Guides & Articles Section with Affiliate, Schema, and Daily Content -->
+<section class="fashion-guides-section">
+  <h2>Men’s Fashion Guides & Articles</h2>
+
+  <!-- Table of Contents -->
+  <nav class="fashion-toc">
+    <ul>
+      <li><a href="#shirts-tops">Shirts & Tops</a></li>
+      <li><a href="#pants-bottoms">Pants & Bottoms</a></li>
+      <li><a href="#outerwear-sweaters">Outerwear & Sweaters</a></li>
+      <li><a href="#material-fabric">Material & Fabric</a></li>
+      <li><a href="#style-guides">Style & Outfit Guides</a></li>
+      <li><a href="#fit-comfort">Fit & Comfort</a></li>
+      <li><a href="#shopping-guides">Shopping & Buying Guides</a></li>
+      <li><a href="#faq-questions">FAQ & Common Questions</a></li>
+    </ul>
+  </nav>
+
+  <!-- Dynamic Mini-Articles -->
+  <div id="daily-content"></div>
+
+</section>
+
+<style>
+.fashion-guides-section {margin:50px 20px; max-width:1000px; margin-left:auto; margin-right:auto;}
+.fashion-guides-section h2 {text-align:center; font-size:2em; margin-bottom:30px;}
+.fashion-toc ul {list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:15px; justify-content:center; margin-bottom:40px;}
+.fashion-toc li {margin:0;}
+.fashion-toc a {color:#ff6600; text-decoration:none; font-weight:bold;}
+.fashion-toc a:hover {text-decoration:underline;}
+.daily-article {background:white; padding:20px; margin-bottom:30px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+.daily-article h3 {margin-top:0; font-size:1.3em; color:#111;}
+.daily-article p {line-height:1.6em;}
+.daily-article a {color:#ff6600; text-decoration:none;}
+.daily-article a:hover {text-decoration:underline;}
+</style>
+
+<!-- Dynamic Daily Content Script -->
+<script>
+const dailyArticles = [
+  {
+    id: "shirts-tops",
+    title: "Top 10 Premium Dress Shirts Every Man Should Own",
+    text: "Discover the best premium shirts that combine comfort, style, and durability. Perfect for office, business, and casual wear. Shop these luxury shirts <a href='https://www.linkconnector.com/ta.php?lc=007949137778006921&atid=bugatchiWeb' target='_blank' rel='nofollow noopener'>here via our affiliate link</a>."
+  },
+  {
+    id: "pants-bottoms",
+    title: "The Ultimate Guide to Men’s Chinos: Fit, Fabric, and Style",
+    text: "Learn how to choose chinos that match your style and body type. Shop high-quality luxury pants <a href='https://www.linkconnector.com/ta.php?lc=007949137778006921&atid=bugatchiWeb' target='_blank' rel='nofollow noopener'>via our affiliate link</a>."
+  },
+  {
+    id: "outerwear-sweaters",
+    title: "Layering Outerwear & Sweaters Like a Modern Gentleman",
+    text: "Master layering for every season with our top tips on sweaters and jackets. Shop recommended pieces <a href='https://www.linkconnector.com/ta.php?lc=007949137778006921&atid=bugatchiWeb' target='_blank' rel='nofollow noopener'>here via our affiliate link</a>."
+  },
+  {
+    id: "material-fabric",
+    title: "Luxury Fabrics Explained: Cotton, Linen, Wool & Blends",
+    text: "Understand the fabrics behind luxury menswear and how to care for them. Shop quality fabrics <a href='https://www.linkconnector.com/ta.php?lc=007949137778006921&atid=bugatchiWeb' target='_blank' rel='nofollow noopener'>here via our affiliate link</a>."
+  },
+  {
+    id: "style-guides",
+    title: "Business Casual Outfits for Every Office Setting",
+    text: "Upgrade your office wardrobe with our business casual outfit ideas. Shop premium clothing <a href='https://www.linkconnector.com/ta.php?lc=007949137778006921&atid=bugatchiWeb' target='_blank' rel='nofollow noopener'>here via our affiliate link</a>."
+  },
+  {
+    id: "fit-comfort",
+    title: "Finding the Perfect Fit: Slim, Classic, or Relaxed?",
+    text: "Learn which fit suits your body type and lifestyle best. Shop tailored shirts and pants <a href='https://www.linkconnector.com/ta.php?lc=007949137778006921&atid=bugatchiWeb' target='_blank' rel='nofollow noopener'>here via our affiliate link</a>."
+  },
+  {
+    id: "shopping-guides",
+    title: "Where to Buy the Best Men’s Luxury Shirts Online",
+    text: "Shop trusted online sources for premium menswear and get exclusive deals <a href='https://www.linkconnector.com/ta.php?lc=007949137778006921&atid=bugatchiWeb' target='_blank' rel='nofollow noopener'>here via our affiliate link</a>."
+  },
+  {
+    id: "faq-questions",
+    title: "Men’s Clothing Sizes Explained: Small, Medium, Large, XL",
+    text: "Understand sizing for shirts, pants, and jackets. Make informed purchases <a href='https://www.linkconnector.com/ta.php?lc=007949137778006921&atid=bugatchiWeb' target='_blank' rel='nofollow noopener'>via our affiliate link</a>."
+  }
+];
+
+// Inject daily article (rotate each day)
+const today = new Date().getDate();
+const articleIndex = today % dailyArticles.length;
+const dailyContent = dailyArticles[articleIndex];
+
+const container = document.getElementById('daily-content');
+const articleEl = document.createElement('div');
+articleEl.classList.add('daily-article');
+articleEl.id = dailyContent.id;
+articleEl.innerHTML = `<h3>${dailyContent.title}</h3><p>${dailyContent.text}</p>`;
+container.appendChild(articleEl);
+</script>
+
+<!-- JSON-LD Structured Data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Men’s Clothing Sizes Explained: Small, Medium, Large, XL",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Understand sizing for shirts, pants, and jackets. Make informed purchases via our affiliate link."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to Care for Luxury Fabrics at Home",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Follow proper care instructions for cotton, linen, and wool blends to maintain luxury clothing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where to Buy the Best Men’s Luxury Shirts Online",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shop trusted online sources for premium menswear and get exclusive deals via our affiliate link."
+      }
+    }
+  ]
+}
+</script>
